@@ -1,0 +1,1601 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101d3a">
+<title>Types of Governments | Class 7 SST</title>
+
+<style>
+:root {
+  --navy: #101d3a;
+  --blue: #2457e6;
+  --blue-dark: #183caa;
+  --sky: #e9f0ff;
+  --paper: #f6f8fc;
+  --white: #ffffff;
+  --ink: #172033;
+  --muted: #65718a;
+  --line: #e1e7f1;
+  --green: #087b57;
+  --green-bg: #e1f7ed;
+  --red: #b72d43;
+  --red-bg: #fff0f1;
+  --shadow: 0 16px 45px rgba(22, 42, 84, .09);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+button, a { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+::selection { background: #d8e4ff; color: var(--navy); }
+
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
+
+section { padding: 100px 0; }
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--blue);
+  font-size: .76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1, h2, h3 {
+  line-height: 1.2;
+  letter-spacing: -.7px;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--blue);
+  color: white;
+  font-weight: 750;
+  transition: transform .25s, background .25s, box-shadow .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: var(--blue-dark);
+  box-shadow: 0 10px 25px #2457e638;
+}
+
+.btn-outline {
+  background: white;
+  color: var(--navy);
+  border-color: var(--line);
+}
+
+.btn-outline:hover { color: white; }
+
+.btn:focus-visible, a:focus-visible, .gov-tab:focus-visible,
+.answer:focus-visible {
+  outline: 3px solid #8aa9ff;
+  outline-offset: 4px;
+}
+
+/* NAVIGATION */
+
+.topbar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background: rgba(16, 29, 58, .93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #ffffff15;
+  transition: padding .3s, box-shadow .3s;
+}
+
+.topbar.scrolled {
+  padding: 9px 0;
+  box-shadow: 0 8px 30px #101d3a35;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 850;
+  letter-spacing: -.3px;
+  white-space: nowrap;
+}
+
+.brand span { color: #91b2ff; }
+
+.nav-links {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 15px;
+  background: #ffffff0b;
+}
+
+.nav-link {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border-radius: 11px;
+  color: #d4ddef;
+  font-size: .88rem;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: color .3s;
+}
+
+.nav-link.active { color: var(--navy); }
+
+.nav-blob {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  left: 5px;
+  width: 0;
+  height: calc(100% - 10px);
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 3px 12px #00000020;
+  transition: transform .48s cubic-bezier(.2,.8,.2,1),
+              width .35s ease;
+  pointer-events: none;
+}
+
+.nav-links.home-mode .nav-blob {
+  border-radius: 50px 12px 50px 12px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 160px 0 95px;
+  color: white;
+  background:
+    radial-gradient(ellipse at 80% 20%, #3159b5 0, transparent 38%),
+    radial-gradient(ellipse at 5% 90%, #173d85 0, transparent 38%),
+    linear-gradient(130deg, #101d3a 0%, #162b56 60%, #203e77 100%);
+}
+
+.hero::before, .hero::after {
+  position: absolute;
+  content: "";
+  border: 1px solid #ffffff16;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 440px;
+  height: 440px;
+  top: -160px;
+  right: -110px;
+}
+
+.hero::after {
+  width: 300px;
+  height: 300px;
+  top: -90px;
+  right: -40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 55px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .eyebrow { color: #a9c1ff; }
+
+.hero h1 {
+  margin-bottom: 24px;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  letter-spacing: -3px;
+  line-height: 1.02;
+}
+
+.hero h1 span {
+  color: #a8c1ff;
+  display: block;
+}
+
+.hero-copy {
+  max-width: 610px;
+  color: #d4def2;
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero .btn-outline {
+  color: white;
+  background: #ffffff10;
+  border-color: #ffffff40;
+}
+
+.hero .btn-outline:hover { background: #ffffff22; }
+
+.hero-card {
+  padding: 30px;
+  border: 1px solid #ffffff25;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff18, #ffffff08);
+  box-shadow: 0 30px 70px #00000022;
+  backdrop-filter: blur(12px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-card-label {
+  color: #afc4ff;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-card h3 {
+  margin: 14px 0;
+  font-size: 1.8rem;
+}
+
+.hero-card p { color: #d4def2; }
+
+.hero-rule {
+  height: 1px;
+  margin: 20px 0;
+  background: #ffffff25;
+}
+
+.hero-point {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 9px 0;
+  color: #e1e9fa;
+  font-size: .9rem;
+}
+
+.hero-point strong { color: white; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+/* WHY GOVERNMENT */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.info-card {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: white;
+  box-shadow: 0 7px 25px #172e5a08;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.info-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+  border-color: #c3d2f5;
+}
+
+.card-number {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--blue);
+  font-size: .8rem;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+}
+
+.info-card h3 { font-size: 1.12rem; }
+.info-card p { margin-bottom: 0; color: var(--muted); font-size: .93rem; }
+
+/* GOVERNMENT TYPES */
+
+.types-section {
+  background: #edf2fb;
+}
+
+.type-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.type-tabs {
+  display: grid;
+  gap: 10px;
+  position: sticky;
+  top: 95px;
+}
+
+.gov-tab {
+  padding: 16px 18px;
+  border: 1px solid #dce4f3;
+  border-radius: 14px;
+  background: white;
+  color: #46536c;
+  text-align: left;
+  font-weight: 750;
+  transition: .25s;
+}
+
+.gov-tab:hover {
+  transform: translateX(4px);
+  border-color: #a8bff4;
+}
+
+.gov-tab.active {
+  color: white;
+  border-color: var(--blue);
+  background: linear-gradient(115deg, #2457e6, #183caa);
+  box-shadow: 0 9px 24px #2457e632;
+}
+
+.gov-tab small {
+  display: block;
+  margin-top: 3px;
+  font-size: .77rem;
+  font-weight: 450;
+  opacity: .8;
+}
+
+.type-panel {
+  min-width: 0;
+  padding: clamp(23px, 4vw, 42px);
+  border: 1px solid #e0e7f2;
+  border-radius: 24px;
+  background: white;
+  box-shadow: var(--shadow);
+  animation: reveal .38s ease both;
+}
+
+.type-panel h3 {
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+}
+
+.type-panel p { color: #536078; }
+
+.type-panel .lead {
+  color: var(--ink);
+  font-size: 1.08rem;
+}
+
+.type-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 11px;
+  border-radius: 7px;
+  background: var(--sky);
+  color: var(--blue-dark);
+  font-size: .74rem;
+  font-weight: 850;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.detail-box {
+  padding: 20px;
+  border-radius: 15px;
+  background: #f7f9fd;
+  border: 1px solid #e7edf7;
+}
+
+.detail-box h4 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.detail-box ul {
+  margin: 0;
+  padding-left: 19px;
+  color: #58647a;
+  font-size: .91rem;
+}
+
+.detail-box li { margin-bottom: 8px; }
+
+.example-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 4px solid var(--blue);
+  border-radius: 0 14px 14px 0;
+  background: #eff4ff;
+}
+
+.example-box h4 { margin: 0 0 8px; }
+.example-box p { margin: 0; font-size: .94rem; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SPECIAL EXAMPLE */
+
+.case-study {
+  margin-top: 25px;
+  padding: 23px;
+  border: 1px solid #e9d9b1;
+  border-radius: 16px;
+  background: #fffaf0;
+}
+
+.case-study h4 { margin: 0 0 9px; color: #765013; }
+.case-study p { margin: 0; color: #66563b; font-size: .94rem; }
+
+/* COMPARISON */
+
+.comparison-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: .89rem;
+}
+
+.comparison-table th {
+  padding: 19px 17px;
+  background: var(--navy);
+  color: white;
+  font-size: .82rem;
+  letter-spacing: .2px;
+}
+
+.comparison-table td {
+  padding: 19px 17px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  color: #58647a;
+}
+
+.comparison-table tbody tr {
+  transition: background .2s;
+}
+
+.comparison-table tbody tr:hover { background: #f0f5ff; }
+.comparison-table tbody tr:last-child td { border-bottom: 0; }
+
+.comparison-table td:first-child {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.comparison-note {
+  margin-top: 17px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+/* QUIZ */
+
+.quiz-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(150deg, #101d3a, #172f61);
+  color: white;
+}
+
+.quiz-section .eyebrow { color: #a8c1ff; }
+.quiz-section .section-heading p { color: #c1cde3; }
+
+.quiz-shell {
+  max-width: 800px;
+  margin: auto;
+  padding: clamp(23px, 5vw, 43px);
+  border: 1px solid #ffffff22;
+  border-radius: 25px;
+  background: #ffffff0c;
+  box-shadow: 0 25px 65px #00000020;
+  backdrop-filter: blur(12px);
+}
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #c4d2ef;
+  font-size: .87rem;
+}
+
+.progress-track {
+  overflow: hidden;
+  height: 7px;
+  margin-bottom: 33px;
+  border-radius: 50px;
+  background: #ffffff18;
+}
+
+.progress-bar {
+  width: 10%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7fa4ff, #c0d0ff);
+  transition: width .4s ease;
+}
+
+.question {
+  margin-bottom: 25px;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+}
+
+.answer {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #ffffff26;
+  border-radius: 13px;
+  background: #ffffff09;
+  color: white;
+  text-align: left;
+  transition: transform .22s, background .22s, border-color .22s;
+}
+
+.answer:hover:not(:disabled) {
+  transform: translateX(4px);
+  background: #ffffff17;
+  border-color: #a7beff;
+}
+
+.answer:disabled { cursor: default; }
+
+.answer.correct {
+  color: #c4ffdf;
+  background: #087b5738;
+  border-color: #58d9a4;
+}
+
+.answer.incorrect {
+  color: #ffd3da;
+  background: #b72d4335;
+  border-color: #ff8797;
+}
+
+.answer .letter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 29px;
+  margin-right: 12px;
+  border: 1px solid #ffffff30;
+  border-radius: 8px;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.feedback {
+  min-height: 28px;
+  margin: 18px 0 10px;
+  color: #c5d6fa;
+  font-size: .92rem;
+}
+
+.feedback.good { color: #9bf0c8; }
+.feedback.bad { color: #ffb8c3; }
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.quiz-actions .btn { min-width: 125px; }
+.quiz-actions .btn:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+
+.score-result { text-align: center; animation: reveal .45s ease both; }
+.score-result .score-number {
+  margin: 25px 0;
+  color: #a9c3ff;
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.score-result p { color: #d0daee; }
+
+.score-track {
+  max-width: 420px;
+  height: 9px;
+  margin: 25px auto;
+  border-radius: 50px;
+  background: #ffffff20;
+  overflow: hidden;
+}
+
+.score-track span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #658eff, #a9c3ff);
+  border-radius: inherit;
+  transition: width .6s;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 34px 20px;
+  background: #0a1328;
+  color: white;
+  text-align: center;
+}
+
+.footer-line {
+  margin: 4px 0;
+  font-size: .83rem;
+  letter-spacing: 2px;
+}
+
+.footer-line:last-child {
+  color: #a8c1ff;
+  font-weight: 800;
+}
+
+/* SCROLL ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-card { max-width: 560px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .type-layout { grid-template-columns: 1fr; }
+  .type-tabs {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .gov-tab { min-width: 150px; }
+}
+
+@media (max-width: 600px) {
+  .container { width: min(100% - 28px, 1160px); }
+  section { padding: 70px 0; }
+  .topbar { padding: 9px 0; }
+  .nav-inner { flex-direction: column; gap: 7px; }
+  .nav-links { width: 100%; justify-content: space-between; }
+  .nav-link { padding: 8px 10px; font-size: .78rem; }
+  .hero { padding: 170px 0 70px; }
+  .hero h1 { letter-spacing: -1.8px; }
+  .hero-grid { gap: 30px; }
+  .hero-card { padding: 23px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .type-panel { padding: 22px; }
+  .gov-tab { min-width: 135px; padding: 12px; font-size: .85rem; }
+  .quiz-shell { padding: 21px; }
+  .quiz-actions .btn { min-width: 0; padding: 12px 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="container nav-inner">
+    <a class="brand" href="#home" aria-label="Government Classroom Home">
+      CIVICS<span>CLASS</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <span class="nav-blob" id="navBlob"></span>
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#types">Government Types</a>
+      <a class="nav-link" href="#comparison">Comparison</a>
+      <a class="nav-link" href="#quiz">Quiz</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Class 7 Social Studies</span>
+        <h1>Who gets to <span>make the rules?</span></h1>
+        <p class="hero-copy">
+          Imagine a school where somebody has to organise sports day,
+          decide how the library works and settle disagreements fairly.
+          Now imagine an entire country facing those decisions. That is
+          where government comes in. But who should be in charge?
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#types">Explore Government Types</a>
+          <a class="btn btn-outline" href="#quiz">Test Your Knowledge</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <span class="hero-card-label">The big question</span>
+        <h3>Who holds the power?</h3>
+        <p>
+          Different societies answer this question differently.
+          Some let citizens choose their leaders. Others place authority
+          in a royal family, a religious leadership or a small elite group.
+        </p>
+        <div class="hero-rule"></div>
+        <div class="hero-point"><span>Democracy</span><strong>The people</strong></div>
+        <div class="hero-point"><span>Monarchy</span><strong>A royal family</strong></div>
+        <div class="hero-point"><span>Dictatorship</span><strong>A ruler or regime</strong></div>
+        <div class="hero-point"><span>Theocracy</span><strong>Religious authorities</strong></div>
+        <div class="hero-point"><span>Oligarchy</span><strong>A small elite</strong></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">The foundations of society</span>
+        <h2>Why do we need government?</h2>
+        <p>
+          Think about what would happen if nobody organised public services,
+          settled disputes or protected people's rights. A government helps
+          a society work together instead of leaving every problem unresolved.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <article class="info-card reveal">
+          <span class="card-number">01 / ORDER</span>
+          <h3>Maintain peace</h3>
+          <p>
+            Laws establish rules for public life. Police, courts and other
+            institutions help enforce those laws and deal with wrongdoing.
+            Fair rules should apply to everyone.
+          </p>
+        </article>
+        <article class="info-card reveal">
+          <span class="card-number">02 / SERVICES</span>
+          <h3>Provide public goods</h3>
+          <p>
+            Governments help organise roads, public transport, schools,
+            sanitation, hospitals and disaster relief. These services
+            support entire communities.
+          </p>
+        </article>
+        <article class="info-card reveal">
+          <span class="card-number">03 / RIGHTS</span>
+          <h3>Protect people</h3>
+          <p>
+            Constitutions and laws can protect freedoms, promote equality
+            and prevent unfair treatment. Independent courts can help people
+            challenge abuses of power.
+          </p>
+        </article>
+        <article class="info-card reveal">
+          <span class="card-number">04 / JUSTICE</span>
+          <h3>Resolve conflicts</h3>
+          <p>
+            Disagreements over land, contracts, public resources or rights
+            need peaceful solutions. Courts and other public institutions
+            provide ways to settle disputes.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="types-section" id="types">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Your interactive classroom</span>
+        <h2>Meet the five types of government</h2>
+        <p>
+          Select each system to discover who holds power, how decisions
+          are made, what its strengths and weaknesses may be, and how
+          it appears in the real world.
+        </p>
+      </div>
+
+      <div class="type-layout reveal">
+        <div class="type-tabs" role="tablist" aria-label="Types of government">
+          <button class="gov-tab active" role="tab" aria-selected="true"
+            data-type="democracy">01. Democracy<small>Power of the people</small></button>
+          <button class="gov-tab" role="tab" aria-selected="false"
+            data-type="monarchy">02. Monarchy<small>Rule by a monarch</small></button>
+          <button class="gov-tab" role="tab" aria-selected="false"
+            data-type="dictatorship">03. Dictatorship<small>Concentrated power</small></button>
+          <button class="gov-tab" role="tab" aria-selected="false"
+            data-type="theocracy">04. Theocracy<small>Religious authority</small></button>
+          <button class="gov-tab" role="tab" aria-selected="false"
+            data-type="oligarchy">05. Oligarchy<small>Rule by a few</small></button>
+        </div>
+
+        <div id="typeContent" class="type-panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Compare and understand</span>
+        <h2>Five systems, five different answers</h2>
+        <p>
+          The easiest way to compare governments is to ask three questions:
+          Who has power? Can ordinary citizens participate? What guides the
+          making of laws?
+        </p>
+      </div>
+
+      <div class="comparison-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Government</th>
+              <th>Who holds power?</th>
+              <th>Citizen participation</th>
+              <th>Basis of lawmaking</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Democracy</td>
+              <td>Citizens directly or through elected representatives</td>
+              <td>Voting, public debate and other lawful participation</td>
+              <td>Constitution, legislation and public institutions</td>
+              <td>India</td>
+            </tr>
+            <tr>
+              <td>Monarchy</td>
+              <td>A king, queen or other monarch; actual power varies</td>
+              <td>Depends on whether the monarchy is constitutional or absolute</td>
+              <td>Constitution and laws, or the monarch's authority in an absolute system</td>
+              <td>United Kingdom, a constitutional monarchy</td>
+            </tr>
+            <tr>
+              <td>Dictatorship</td>
+              <td>A single ruler or a tightly controlling regime</td>
+              <td>Often heavily restricted, especially in political opposition</td>
+              <td>Ruler's decisions, decrees and institutions under the regime</td>
+              <td>Chile under Augusto Pinochet</td>
+            </tr>
+            <tr>
+              <td>Theocracy</td>
+              <td>Religious authorities or a system claiming religious authority</td>
+              <td>Varies; religious and political participation may be restricted</td>
+              <td>Religious doctrine alongside the state's legal framework</td>
+              <td>Iran, an Islamic republic with powerful religious institutions</td>
+            </tr>
+            <tr>
+              <td>Oligarchy</td>
+              <td>A small, powerful group, often based on wealth, family or military influence</td>
+              <td>May be limited, especially if elites dominate decisions</td>
+              <td>Decisions shaped by the interests and institutions of the ruling group</td>
+              <td>Ancient Sparta's narrow ruling citizen class</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison-note reveal">
+        Important: real countries do not always fit neatly into one box.
+        Their political systems can combine features of several categories.
+        These are simplified classroom comparisons, not complete descriptions
+        of every country's laws or institutions.
+      </p>
+    </div>
+  </section>
+
+  <section class="quiz-section" id="quiz">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Knowledge check</span>
+        <h2>Time to challenge yourself</h2>
+        <p>
+          Ten questions. Five government systems. See how well you can
+          distinguish the systems and connect them to real examples.
+        </p>
+      </div>
+
+      <div class="quiz-shell reveal" id="quizShell">
+        <div class="quiz-top">
+          <span id="questionCounter">Question 1 of 10</span>
+          <span id="scoreCounter">Score: 0</span>
+        </div>
+        <div class="progress-track" role="progressbar"
+          aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="10"
+          aria-valuenow="1" id="progressTrack">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="quizContent"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="footer-line">Made using AI</p>
+  <p class="footer-line">Avyan Intelligence</p>
+</footer>
+
+<script>
+"use strict";
+
+/* GOVERNMENT CONTENT */
+
+const governments = {
+  democracy: {
+    tag: "Power belongs to the people",
+    title: "Democracy: Government by the people",
+    intro: "Imagine that your class needs to choose a destination for its annual trip. Instead of allowing one student to decide everything, the class discusses the options and votes. A country's decisions are much more complicated, but democracy begins with the same principle: people should have a say in how they are governed.",
+    sections: [
+      {
+        title: "How it works",
+        items: [
+          "Universal adult franchise means that all adult citizens who meet the applicable citizenship and legal requirements have the right to vote, without unfair discrimination. In India, the voting age for eligible citizens is 18.",
+          "In a direct democracy, citizens vote directly on particular decisions. In a representative democracy, they elect people to make decisions on their behalf.",
+          "Regular elections allow citizens to choose or replace leaders. Political opposition, public discussion, a free press and peaceful criticism help people question those in power.",
+          "Equality before the law and protection of fundamental rights are essential democratic principles. A majority should not be allowed to take away the basic rights of minorities."
+        ]
+      },
+      {
+        title: "Strengths and challenges",
+        items: [
+          "Strength: Citizens can participate in choosing leaders and influence public policy.",
+          "Strength: Leaders can be held accountable through elections, courts and public scrutiny.",
+          "Challenge: Elections and public discussions can be affected by misinformation, money, prejudice or polarisation.",
+          "Challenge: Decision-making can take time because different groups need to be heard."
+        ]
+      }
+    ],
+    exampleTitle: "Real-world example: India",
+    example: "India is a constitutional parliamentary democracy and a republic. Eligible adult citizens elect representatives to Parliament and state legislatures. The Constitution establishes the framework of government and protects fundamental rights. Democracy is more than casting a vote: it also involves respecting the law, listening to others and holding institutions accountable."
+  },
+
+  monarchy: {
+    tag: "A monarch is the head of the monarchy",
+    title: "Monarchy: Rule by a king or queen",
+    intro: "Imagine that leadership of a royal family traditionally passes from one generation to the next. That is the central idea of hereditary monarchy. But here is the important twist: a king or queen does not necessarily have the power to run the whole country. The monarch's actual authority depends on the type of monarchy.",
+    sections: [
+      {
+        title: "How it works",
+        items: [
+          "In a hereditary monarchy, the monarch's successor is usually determined by established succession rules within a royal family.",
+          "In an absolute monarchy, the monarch has extensive governing authority, although the exact limits can vary by country and legal system.",
+          "In a constitutional monarchy, the monarch's role is defined and limited by a constitution, laws or established constitutional conventions. Elected institutions usually run the government.",
+          "The monarch may represent national traditions and carry out ceremonial duties without personally deciding government policy."
+        ]
+      },
+      {
+        title: "Strengths and challenges",
+        items: [
+          "Possible strength: A continuing royal institution can provide ceremonial continuity and a shared national symbol.",
+          "Possible strength: In a constitutional monarchy, an impartial ceremonial head of state may stand apart from party politics.",
+          "Challenge: Hereditary succession does not guarantee that the next monarch will be the most capable leader.",
+          "Challenge: In an absolute monarchy, concentrated authority can weaken public accountability and political participation."
+        ]
+      }
+    ],
+    exampleTitle: "Real-world examples: United Kingdom and historical France",
+    example: "The United Kingdom is a constitutional monarchy: the king is head of state, while elected representatives and the government exercise political power under the country's constitutional arrangements. By contrast, France under Louis XIV is a famous historical example of a monarchy in which the king concentrated substantial authority. Monarchies are therefore not all governed in the same way."
+  },
+
+  dictatorship: {
+    tag: "Political power is heavily concentrated",
+    title: "Dictatorship: When power has few checks",
+    intro: "Imagine a team captain who refuses to let teammates speak, changes every rule personally and prevents anyone from challenging decisions. In a dictatorship, a ruler or ruling regime similarly concentrates political power and limits meaningful opposition. A country is not a dictatorship merely because its leader is strict; the key issue is the absence of effective democratic accountability and checks on power.",
+    sections: [
+      {
+        title: "How it works",
+        items: [
+          "Power may rest with one individual or a small military or political leadership group.",
+          "Opposition parties, independent journalism, protests and public criticism may be restricted or suppressed.",
+          "Elections, if held, may not offer a genuinely fair opportunity to replace the rulers.",
+          "Courts and other institutions may struggle to check the leader if the regime controls them.",
+          "Some dictatorships arise after a military coup; others develop when leaders dismantle democratic checks over time."
+        ]
+      },
+      {
+        title: "Strengths claimed by supporters and real dangers",
+        items: [
+          "Supporters sometimes claim that concentrated authority makes decisions faster during a crisis.",
+          "Fast decisions do not automatically mean good decisions. Without scrutiny, mistakes can spread and public needs can be ignored.",
+          "A major danger is the abuse of power when citizens cannot safely challenge the government.",
+          "Restrictions on political rights can prevent people from freely choosing their leaders and demanding accountability."
+        ]
+      }
+    ],
+    exampleTitle: "Historical example: Chile under Augusto Pinochet",
+    example: "General Augusto Pinochet came to power after the 1973 military coup in Chile and led an authoritarian military regime until 1990. His regime severely restricted political freedoms and committed serious human-rights abuses. This is a historical example of authoritarian rule, not a model to admire.",
+
+    caseTitle: "A clearly fictional classroom example: Kylian Mbappé",
+    case: "Imagine a fictional country where Kylian Mbappé becomes its ruler and decides that only he can make laws, nobody can question his decisions and citizens cannot freely choose another leader. In this imaginary scenario, Mbappé is a former dictator after his rule ends. This is a political thought experiment using a famous footballer; it is not a claim that the real Kylian Mbappé has ever been a dictator or held political office."
+  },
+
+  theocracy: {
+    tag: "Religious authority shapes government",
+    title: "Theocracy: Government linked to religious authority",
+    intro: "Imagine a country where religious teachings do not merely guide private beliefs but also play a central role in state law and political authority. This is the basic idea behind theocracy. The relationship between religion and government differs from country to country, so it is important to examine how much authority religious institutions actually possess.",
+    sections: [
+      {
+        title: "How it works",
+        items: [
+          "Religious leaders or institutions may hold major political authority or supervise important state institutions.",
+          "Laws may be based substantially on religious doctrines, interpretations or sacred texts.",
+          "Religious authorities may have the power to assess whether legislation or government actions comply with religious rules.",
+          "The extent of religious influence varies. A country can have an official religion without being a full theocracy.",
+          "Citizens who follow different beliefs, or no religion, may face difficulties if their rights and political participation are not equally protected."
+        ]
+      },
+      {
+        title: "Possible arguments and challenges",
+        items: [
+          "Supporters may believe that government should reflect the society's religious principles and moral traditions.",
+          "Religious institutions can provide ethical guidance and community support.",
+          "A major challenge is ensuring equal citizenship and freedom of belief for people with different religions or viewpoints.",
+          "Disagreements can arise over who has the authority to interpret religious teachings and how those interpretations become law."
+        ]
+      }
+    ],
+    exampleTitle: "Contemporary example: Iran",
+    example: "Iran is an Islamic republic with a constitution that combines elected institutions with powerful religious institutions. The Supreme Leader and bodies such as the Guardian Council exercise significant authority, including oversight connected to Islamic principles. Iran is commonly discussed as a theocratic or theocratic-republican system, although its political structure is more complex than a simple label suggests."
+  },
+
+  oligarchy: {
+    tag: "Power belongs to a small elite",
+    title: "Oligarchy: Rule by a powerful few",
+    intro: "Imagine a school committee in which only three extremely wealthy students can make every decision, even though the entire school is affected. That illustrates the central idea of an oligarchy: a small, privileged group holds disproportionate political power. That group's influence might come from money, family connections, military control or another source of privilege.",
+    sections: [
+      {
+        title: "How it works",
+        items: [
+          "Political decisions are dominated by a relatively small group rather than being genuinely open to the wider population.",
+          "The ruling group may be made up of wealthy families, powerful business interests, military leaders or an established elite.",
+          "Elections or public institutions may exist, but the influential group can still dominate important decisions.",
+          "The key feature is not simply that a country has rich people. It is that a small group exercises dominant political control.",
+          "An oligarchy can overlap with other systems, including authoritarian rule. These labels describe different features of how power is organised."
+        ]
+      },
+      {
+        title: "Strengths claimed by elites and major risks",
+        items: [
+          "Supporters may argue that a small, experienced leadership group can make coordinated decisions quickly.",
+          "A group with specialised knowledge may contribute useful expertise, but expertise does not justify excluding everyone else.",
+          "A major risk is that policies benefit the elite while ordinary citizens have little influence.",
+          "Limited accountability can encourage corruption, unequal opportunities and the concentration of wealth and political influence."
+        ]
+      }
+    ],
+    exampleTitle: "Historical example: Ancient Sparta",
+    example: "Ancient Sparta had a highly restricted political system. Full political participation belonged to a limited class of male Spartan citizens, while women, enslaved helots and many other residents lacked equal political rights. Powerful institutions and a narrow citizen body controlled political life. Sparta is often used to illustrate oligarchic features, although its mixed institutions mean it should not be treated as a perfect example of a pure oligarchy."
+  }
+};
+
+/* RENDER GOVERNMENT TABS */
+
+const typeContent = document.getElementById("typeContent");
+const govTabs = [...document.querySelectorAll(".gov-tab")];
+
+function renderGovernment(type) {
+  const g = governments[type];
+  if (!g) return;
+
+  govTabs.forEach(tab => {
+    const selected = tab.dataset.type === type;
+    tab.classList.toggle("active", selected);
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+
+  typeContent.style.animation = "none";
+  void typeContent.offsetWidth;
+  typeContent.style.animation = "";
+
+  typeContent.innerHTML = `
+    <span class="type-tag">${g.tag}</span>
+    <h3>${g.title}</h3>
+    <p class="lead">${g.intro}</p>
+    <div class="detail-grid">
+      ${g.sections.map((s, i) => `
+        <article class="detail-box">
+          <h4>${s.title}</h4>
+          <ul>${s.items.map(item => `<li>${item}</li>`).join("")}</ul>
+        </article>
+      `).join("")}
+    </div>
+    <article class="example-box">
+      <h4>${g.exampleTitle}</h4>
+      <p>${g.example}</p>
+    </article>
+    ${g.case ? `
+      <article class="case-study">
+        <h4>${g.caseTitle}</h4>
+        <p>${g.case}</p>
+      </article>
+    ` : ""}
+  `;
+}
+
+govTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => renderGovernment(tab.dataset.type));
+
+  tab.addEventListener("keydown", event => {
+    if (!["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+
+    let next = index;
+    if (event.key === "ArrowDown" || event.key === "ArrowRight") next = (index + 1) % govTabs.length;
+    if (event.key === "ArrowUp" || event.key === "ArrowLeft") next = (index - 1 + govTabs.length) % govTabs.length;
+    if (event.key === "Home") next = 0;
+    if (event.key === "End") next = govTabs.length - 1;
+
+    govTabs[next].focus();
+    renderGovernment(govTabs[next].dataset.type);
+  });
+});
+
+renderGovernment("democracy");
+
+/* STICKY NAVIGATION AND MOVING WHITE BLOB */
+
+const topbar = document.getElementById("topbar");
+const navLinks = document.getElementById("navLinks");
+const navBlob = document.getElementById("navBlob");
+const links = [...document.querySelectorAll(".nav-link")];
+
+function moveBlob(link) {
+  if (!link) return;
+  const navRect = navLinks.getBoundingClientRect();
+  const rect = link.getBoundingClientRect();
+  navBlob.style.width = rect.width + "px";
+  navBlob.style.transform = `translateX(${rect.left - navRect.left}px)`;
+}
+
+function activateLink(link) {
+  links.forEach(item => item.classList.toggle("active", item === link));
+  moveBlob(link);
+  navLinks.classList.toggle("home-mode", link?.getAttribute("href") === "#home");
+}
+
+function updateHeader() {
+  topbar.classList.toggle("scrolled", window.scrollY > 30);
+}
+
+links.forEach(link => {
+  link.addEventListener("click", event => {
+    const href = link.getAttribute("href");
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    event.preventDefault();
+    activateLink(link);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (href === "#home") {
+      navLinks.classList.add("home-mode");
+    }
+  });
+});
+
+window.addEventListener("resize", () => {
+  moveBlob(links.find(link => link.classList.contains("active")));
+});
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+/* Keep the selected nav item aligned with the visible section.
+   Clicking Home explicitly restores the blob to the Home position. */
+
+const navSections = ["home", "types", "comparison", "quiz"]
+  .map(id => document.getElementById(id));
+
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (!visible) return;
+    const link = links.find(item => item.getAttribute("href") === "#" + visible.target.id);
+    if (link) activateLink(link);
+  }, {
+    rootMargin: "-25% 0px -55% 0px",
+    threshold: [0, .15, .3, .5]
+  });
+
+  navSections.forEach(section => sectionObserver.observe(section));
+}
+
+updateHeader();
+requestAnimationFrame(() => moveBlob(links[0]));
+
+/* SCROLL REVEAL */
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .1 });
+
+  document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
+} else {
+  document.querySelectorAll(".reveal").forEach(element => element.classList.add("visible"));
+}
+
+/* TEN-QUESTION QUIZ */
+
+const questions = [
+  {
+    q: "In India, which principle allows eligible adult citizens to vote regardless of wealth, gender or religion?",
+    options: [
+      "Hereditary succession",
+      "Universal adult franchise",
+      "Military appointment",
+      "Rule by religious authorities"
+    ],
+    answer: 1,
+    explanation: "Universal adult franchise gives eligible adult citizens the right to vote without unfair discrimination. India's voting age is 18."
+  },
+  {
+    q: "A king is head of state, but elected representatives and a government run the country. Which system is this?",
+    options: [
+      "Absolute monarchy",
+      "Dictatorship",
+      "Constitutional monarchy",
+      "Oligarchy"
+    ],
+    answer: 2,
+    explanation: "In a constitutional monarchy, the monarch's powers are limited by constitutional arrangements. The United Kingdom is an example."
+  },
+  {
+    q: "Which is a major warning sign of dictatorship?",
+    options: [
+      "Citizens can replace leaders through genuinely fair elections",
+      "Courts can independently check government power",
+      "People can freely criticise the government",
+      "Political opposition is suppressed and power lacks effective checks"
+    ],
+    answer: 3,
+    explanation: "Dictatorships concentrate power and often restrict opposition, civil liberties and meaningful accountability."
+  },
+  {
+    q: "Which statement best describes a theocracy?",
+    options: [
+      "A small group of wealthy business owners runs the state",
+      "Religious authorities or doctrines play a central role in political authority and law",
+      "All citizens vote directly on every law",
+      "A royal family passes leadership down through generations"
+    ],
+    answer: 1,
+    explanation: "Theocracy refers to a system in which religious authority has a central role in government. Actual systems vary in complexity."
+  },
+  {
+    q: "A small group of powerful families dominates important government decisions. What is this feature called?",
+    options: [
+      "Oligarchy",
+      "Direct democracy",
+      "Universal franchise",
+      "Constitutional monarchy"
+    ],
+    answer: 0,
+    explanation: "An oligarchy concentrates political power in a small elite, which may be based on wealth, family connections or military influence."
+  },
+  {
+    q: "Which situation is the clearest example of representative democracy?",
+    options: [
+      "A ruler inherits the throne and makes every decision",
+      "Military leaders take power without meaningful public accountability",
+      "Citizens elect members of Parliament to represent them",
+      "Religious authorities alone decide all government policy"
+    ],
+    answer: 2,
+    explanation: "In representative democracy, people elect representatives who make public decisions on their behalf."
+  },
+  {
+    q: "What is an important difference between absolute and constitutional monarchy?",
+    options: [
+      "An absolute monarch is always elected",
+      "A constitutional monarch's authority is limited by constitutional arrangements",
+      "A constitutional monarchy cannot have a parliament",
+      "An absolute monarchy always gives every adult a vote"
+    ],
+    answer: 1,
+    explanation: "An absolute monarch has extensive personal governing authority, while a constitutional monarch's role is restricted by constitutional rules and conventions."
+  },
+  {
+    q: "Which historical leader ruled an authoritarian military regime in Chile after the 1973 coup?",
+    options: [
+      "Mahatma Gandhi",
+      "Nelson Mandela",
+      "Louis XIV",
+      "Augusto Pinochet"
+    ],
+    answer: 3,
+    explanation: "Augusto Pinochet led Chile's military regime from 1973 to 1990, during which political freedoms were severely restricted."
+  },
+  {
+    q: "Why is it important for a democracy to protect minority rights?",
+    options: [
+      "So that the majority can cancel every disagreement",
+      "So that elected leaders never face criticism",
+      "So that everyone receives basic protections even when they disagree with the majority",
+      "So that only wealthy citizens can participate"
+    ],
+    answer: 2,
+    explanation: "Democracy involves more than majority rule. Equality, justice and fundamental rights protect people whose views or identities differ from the majority."
+  },
+  {
+    q: "In our fictional example, Mbappé rules a country, bans criticism and refuses to let citizens choose another leader. Which system does this describe?",
+    options: [
+      "Dictatorship",
+      "Constitutional monarchy",
+      "Representative democracy",
+      "Direct democracy"
+    ],
+    answer: 0,
+    explanation: "This imaginary scenario describes dictatorship because political power is concentrated in one ruler and meaningful opposition is prevented. It is not a claim about the real footballer."
+  }
+];
+
+const quizContent = document.getElementById("quizContent");
+const questionCounter = document.getElementById("questionCounter");
+const scoreCounter = document.getElementById("scoreCounter");
+const progressBar = document.getElementById("progressBar");
+const progressTrack = document.getElementById("progressTrack");
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+let finished = false;
+
+function renderQuestion() {
+  answered = false;
+  finished = false;
+
+  const item = questions[currentQuestion];
+  questionCounter.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+  scoreCounter.textContent = `Score: ${score}`;
+  progressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+  progressTrack.setAttribute("aria-valuenow", String(currentQuestion + 1));
+
+  quizContent.innerHTML = `
+    <h3 class="question">${item.q}</h3>
+    <div class="answers">
+      ${item.options.map((option, index) => `
+        <button class="answer" type="button" data-answer="${index}">
+          <span class="letter">${String.fromCharCode(65 + index)}</span>${option}
+        </button>
+      `).join("")}
+    </div>
+    <p class="feedback" id="feedback" aria-live="polite">Choose the best answer.</p>
+    <div class="quiz-actions">
+      <span style="color:#c4d2ef;font-size:.82rem">Choose carefully.</span>
+      <button class="btn" type="button" id="nextQuestion" disabled>
+        ${currentQuestion === questions.length - 1 ? "View Results" : "Next Question"}
+      </button>
+    </div>
+  `;
+
+  quizContent.querySelectorAll(".answer").forEach(button => {
+    button.addEventListener("click", () => selectAnswer(Number(button.dataset.answer)));
+  });
+
+  document.getElementById("nextQuestion").addEventListener("click", () => {
+    if (!answered) return;
+
+    if (currentQuestion < questions.length - 1) {
+      currentQuestion++;
+      renderQuestion();
+    } else {
+      renderResults();
+    }
+  });
+}
+
+function selectAnswer(choice) {
+  if (answered || finished) return;
+  answered = true;
+
+  const item = questions[currentQuestion];
+  const buttons = [...quizContent.querySelectorAll(".answer")];
+  const feedback = document.getElementById("feedback");
+
+  buttons.forEach((button, index) => {
+    button.disabled = true;
+    if (index === item.answer) button.classList.add("correct");
+    if (index === choice && choice !== item.answer) button.classList.add("incorrect");
+  });
+
+  if (choice === item.answer) {
+    score++;
+    feedback.textContent = "Correct. " + item.explanation;
+    feedback.className = "feedback good";
+  } else {
+    feedback.textContent = "Not quite. " + item.explanation;
+    feedback.className = "feedback bad";
+  }
+
+  scoreCounter.textContent = `Score: ${score}`;
+  document.getElementById("nextQuestion").disabled = false;
+}
+
+function renderResults() {
+  finished = true;
+  questionCounter.textContent = "Quiz complete";
+  scoreCounter.textContent = `Final score: ${score} / ${questions.length}`;
+  progressBar.style.width = "100%";
+  progressTrack.setAttribute("aria-valuenow", "10");
+
+  let title, message;
+
+  if (score === 10) {
+    title = "Outstanding work";
+    message = "You have a strong understanding of all five government systems. Keep asking questions about how power and rights work in the real world.";
+  } else if (score >= 7) {
+    title = "Great progress";
+    message = "You understand many of the key differences. Review any explanations you found tricky and you will be even more confident.";
+  } else if (score >= 4) {
+    title = "You are building your knowledge";
+    message = "You have a good starting point. Revisit the government types above, especially who holds power and how citizens participate, then try again.";
+  } else {
+    title = "A fresh start";
+    message = "Every expert starts somewhere. Explore the five government types again and use the examples to connect each definition to real life.";
+  }
+
+  quizContent.innerHTML = `
+    <div class="score-result">
+      <span class="eyebrow">Your results</span>
+      <h3 class="question">${title}</h3>
+      <div class="score-number">${score}<span style="font-size:2rem;letter-spacing:0"> / 10</span></div>
+      <p>${message}</p>
+      <div class="score-track"><span style="width:${score * 10}%"></span></div>
+      <p>You answered ${score} out of ${questions.length} questions correctly.</p>
+      <div class="quiz-actions" style="justify-content:center;flex-wrap:wrap">
+        <button class="btn" type="button" id="retryQuiz">Try Again</button>
+        <button class="btn btn-outline" type="button" id="reviewTypes">Review Government Types</button>
+        <button class="btn btn-outline" type="button" id="quizHome">Back to Home</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("retryQuiz").addEventListener("click", resetQuiz);
+  document.getElementById("reviewTypes").addEventListener("click", () => {
+    document.getElementById("types").scrollIntoView({ behavior: "smooth" });
+    renderGovernment("democracy");
+  });
+  document.getElementById("quizHome").addEventListener("click", () => {
+    const homeLink = links.find(link => link.getAttribute("href") === "#home");
+    if (homeLink) activateLink(homeLink);
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+function resetQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  answered = false;
+  finished = false;
+  renderQuestion();
+}
+
+renderQuestion();
+
+/* Initial positioning after layout has settled */
+window.addEventListener("load", () => {
+  moveBlob(links.find(link => link.classList.contains("active")) || links[0]);
+});
+</script>
+</body>
+</html>
